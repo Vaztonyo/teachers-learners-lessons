@@ -1,0 +1,13 @@
+package net.lessons.subjects;
+
+public enum Subjects {
+    MATHEMATICS,
+    GEOGRAPHY,
+    LIFE_SCIENCES,
+    HISTORY,
+    ACCOUNTING,
+    ECONOMICS,
+    BUSINESS_STUDIES,
+    COMPUTER_APPLICATIONS_TECHNOLOGY,
+    CONSUMER_STUDIES
+}

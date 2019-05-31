@@ -1,29 +1,23 @@
 package net.lessons;
+import net.lessons.database.DatabaseMethods;
+import net.lessons.subjects.Subjects;
 
-public class Teachers implements Person {
+import java.sql.SQLException;
 
-    String firstName;
-    String lastName;
-    String email;
+public class Teachers extends Person {
 
     public Teachers(String firstName, String lastName, String email){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        super(firstName, lastName, email);
     }
+     static DatabaseMethods db = new DatabaseMethods();
 
-    @Override
-    public String getFirstName() {
-        return firstName;
-    }
-
-    @Override
-    public String getLastName() {
-        return lastName;
-    }
-
-    @Override
-    public String getEmail() {
-        return email;
+    public static void main(String[] args) {
+        try {
+            db.addTeacherToDB("Roberto", "Carlos", "roberto_carlos6@yahoo.com");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
